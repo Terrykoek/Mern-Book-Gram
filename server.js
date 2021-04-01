@@ -9,8 +9,9 @@ require("dotenv").config();
 const mongoURI = process.env.MONGODB_URI;
 const PORT = process.env.PORT || 5000;
 
-//Controlers
+//Controllers
 const bookreactsController = require("./controllers/bookreacts");
+const sessionsController = require("./controllers/session");
 
 // ... other imports
 const path = require("path");
@@ -36,6 +37,7 @@ app.use(express.json()); //return middleware that parses only JSON
 //     res.send('Hi, the route is working fne.')
 // });
 app.use("/bookreacts", bookreactsController);
+app.use("/session", sessionsController);
 
 //catch any route that doenst exist
 app.get("*", (req, res) => {
