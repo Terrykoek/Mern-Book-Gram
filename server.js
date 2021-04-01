@@ -7,7 +7,7 @@ require("dotenv").config();
 
 //Environment Variables
 const mongoURI = process.env.MONGODB_URI;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 //Controlers
 const bookreactsController = require("./controllers/bookreacts");
