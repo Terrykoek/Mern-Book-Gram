@@ -32,10 +32,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //return middleware that parses only JSON
 
 //Route
-app.get("/", (req, res) => {
-  res.send("Hi, the route is working fne.");
-});
-// app.use('/bookreacts', bookreactsController);
+// app.get('/', (req, res) =>{
+//     res.send('Hi, the route is working fne.')
+// });
+app.use("/bookreacts", bookreactsController);
 
 //catch any route that doenst exist
 app.get("*", (req, res) => {
