@@ -2,6 +2,8 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
+const cors = require("cors");
+
 const db = mongoose.connection;
 require("dotenv").config();
 
@@ -11,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 
 //Controllers
 const bookreactsController = require("./controllers/bookreacts");
-const sessionsController = require("./controllers/session");
+const apiController = require("./routes/auth");
 
 // ... other imports
 const path = require("path");
@@ -31,13 +33,14 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //return middleware that parses only JSON
+app.use(cors());
 
 //Route
 // app.get('/', (req, res) =>{
 //     res.send('Hi, the route is working fne.')
 // });
 app.use("/bookreacts", bookreactsController);
-app.use("/session", sessionsController);
+app.use("/api", apiController);
 
 //catch any route that doenst exist
 app.get("*", (req, res) => {

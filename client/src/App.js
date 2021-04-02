@@ -32,7 +32,7 @@ export class App extends Component {
 
     axios({
       method: "POST",
-      url: "https://localhost:5000/session",
+      url: "https://localhost:5000/api/googlelogin",
       data: { tokenId: response.tokenId },
     }).then((response) => {
       console.log("this: " + response);
