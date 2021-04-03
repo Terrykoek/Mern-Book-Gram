@@ -26,11 +26,11 @@ class Bookreact extends Component {
   render() {
     return (
       <>
-        <h4 onClick={() => window.open(this.props.bookreact.url)}>
-         <ul> {this.props.bookreact.title} </ul>
-         <ul>  {this.props.bookreact.sypnopsis}</ul>
-         <ul>  {this.props.bookreact.url}</ul>
-         <ul>  {this.props.bookreact.likeCount}</ul>
+        <h4 class="results" onClick={() => window.open(this.props.bookreact.url)}>
+         <div> {this.props.bookreact.title} </div>
+         <div> {this.props.bookreact.sypnopsis}</div>
+         <div>  {this.props.bookreact.url}</div>
+         <div>  {this.props.bookreact.likeCount}</div>
         </h4>
         <button 
           className='edit-btn'

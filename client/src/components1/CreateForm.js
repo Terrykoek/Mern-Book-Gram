@@ -45,7 +45,7 @@ export default class CreateForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form class="create" onSubmit={this.handleSubmit}>
         <input
           type='text'
           value={this.state.title}
@@ -74,7 +74,7 @@ export default class CreateForm extends Component {
           id='likeCount'
           placeholder='likeCount'
         />
-        <input type='submit' value='Add bookreact' />
+        <input type='submit' value='Add books' />
       </form>
     )
   }
