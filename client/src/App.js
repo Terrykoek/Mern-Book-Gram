@@ -57,6 +57,9 @@ import './App.css';
 import React, { Component } from 'react';
 import Bookreact from './components1/Bookreact';
 import CreateForm from './components1/CreateForm';
+import Routes from "./routes/Routes";
+import {BrowserRouter as Router,Switch,} from "react-router-dom";
+
 
 const axios = require('axios');
 
@@ -88,6 +91,10 @@ export class App extends Component {
   render() {
     return (
       <>
+      <Router>
+        <Routes />
+      </Router>
+
       <CreateForm fetchdata={this.fetchdata} />
       {this.state.bookreacts.map((bookreact, index) => {
           return <Bookreact bookreact={bookreact} key={bookreact._id} fetchdata={this.fetchdata}  />;
