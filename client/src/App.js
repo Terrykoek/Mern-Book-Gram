@@ -55,8 +55,8 @@
 
 import './App.css';
 import React, { Component } from 'react';
-import Bookreact from './components1/Bookreact';
-import CreateForm from './components1/CreateForm';
+import Bookreact from './components/Bookreact';
+import CreateForm from './components/CreateForm';
 
 const axios = require('axios');
 
