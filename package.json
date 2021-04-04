@@ -20,8 +20,11 @@
   },
   "homepage": "https://github.com/Terrykoek/Mern-Book-Gram#readme",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
     "path": "^0.12.7",
     "react-google-login": "^5.2.2"

@@ -3,18 +3,21 @@ const express = require("express");
 const router = express.Router();
 const Bookreacts = require("../models/bookreacts");
 
+//create route
 router.post("/", (req, res) => {
   Bookreacts.create(req.body, (err, createdBookreact) => {
     res.json(createdBookreact);
   });
 });
 
+//read route
 router.get("/", (req, res) => {
   Bookreacts.find({}, (err, foundBookreacts) => {
     res.json(foundBookreacts);
   });
 });
 
+//update route
 router.put("/:id", (req, res) => {
   Bookreacts.findByIdAndUpdate(
     req.params.id,
@@ -26,6 +29,7 @@ router.put("/:id", (req, res) => {
   );
 });
 
+//delete route
 router.delete("/:id", (req, res) => {
   Bookreacts.findByIdAndRemove(req.params.id, (err, deletedBookreact) => {
     res.json(deletedBookreact);
