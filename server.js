@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const app = express();
 const db = mongoose.connection;
 require("dotenv").config();
+const cors = require('cors');
+// const path = require('path');
 
 //Environment Variables
 const mongoURI = process.env.MONGODB_URI;
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 //Controlers
 const bookreactsController = require("./controllers/bookreacts");
@@ -18,7 +20,7 @@ const path = require("path");
 //Connect to Mongo
 mongoose.connect(
   mongoURI,
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  { useCreateIndex:true,useNewUrlParser: true, useFindAndModify:false, useUnifiedTopology: true },
   () => console.log("MongoDB connection established:")
 );
 
@@ -29,12 +31,14 @@ db.on("disconnected", () => console.log("mongo disconnected"));
 //Middleware
 app.use(express.static(path.join(__dirname, "client", "build")));
 app.use(express.urlencoded({ extended: false }));
+app.use(cors());
 app.use(express.json()); //return middleware that parses only JSON
 
 //Route
 // app.get('/', (req, res) =>{
 //     res.send('Hi, the route is working fne.')
 // });
+app.use('/api/auth',require('./controllers/auth'));
 app.use("/bookreacts", bookreactsController);
 
 //catch any route that doenst exist
