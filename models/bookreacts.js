@@ -5,6 +5,7 @@ const bookreactSchema = new mongoose.Schema({
   sypnopsis: String,
   url: String,
   likeCount: String,
+  email: String
 });
 
 const Bookreacts = mongoose.model("Bookreact", bookreactSchema);

@@ -25,6 +25,7 @@ export default class CreateForm extends Component {
         sypnopsis: this.state.sypnopsis,
         url: this.state.url,
         likeCount: this.state.likeCount,
+        email: this.props.email
       });
       this.props.fetchdata();
     } catch (err) {

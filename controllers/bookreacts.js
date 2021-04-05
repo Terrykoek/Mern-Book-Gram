@@ -11,8 +11,8 @@ router.post("/", (req, res) => {
 });
 
 //read route
-router.get("/", (req, res) => {
-  Bookreacts.find({}, (err, foundBookreacts) => {
+router.get("/:email", (req, res) => {
+  Bookreacts.find({ email: req.params.email }, (err, foundBookreacts) => {
     res.json(foundBookreacts);
   });
 });

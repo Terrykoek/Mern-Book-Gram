@@ -55,45 +55,15 @@
 
 import './App.css';
 import React, { Component } from 'react';
-import Bookreact from './components/Bookreact';
-import CreateForm from './components/CreateForm';
-
-const axios = require('axios');
+import Loginpage from './components/Loginpage';
 
 export class App extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      bookreacts: [],
-    };
-  }
-
-  fetchdata = async () => {
-    try {
-      const response = await axios.get('./bookreacts');
-      // console.log(response.data);
-      this.setState({
-        bookreacts: response.data,
-      });
-    } catch (err) {
-      console.log(err);
-    }
-  };
-//to update state of component
-  componentDidMount = () => {
-    this.fetchdata();
-  };
-
   render() {
     return (
-      <>
-      <CreateForm fetchdata={this.fetchdata} />
-      {this.state.bookreacts.map((bookreact, index) => {
-          return <Bookreact bookreact={bookreact} key={bookreact._id} fetchdata={this.fetchdata}  />;
-      })}
-      </>
-      );
+       <div className='App'>
+         <Loginpage />
+       </div>
+      )
   }
 }
 

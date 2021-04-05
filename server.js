@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 5000;
 
 //Controlers
 const bookreactsController = require("./controllers/bookreacts");
+const loginController = require("./controllers/loginController");
+
 
 // ... other imports
 const path = require("path");
@@ -35,7 +37,7 @@ app.use(express.json()); //return middleware that parses only JSON
 // app.get('/', (req, res) =>{
 //     res.send('Hi, the route is working fne.')
 // });
-app.use("/bookreacts", bookreactsController);
+app.use("/bookreacts", bookreactsController, loginController);
 
 //catch any route that doenst exist
 app.get("*", (req, res) => {
