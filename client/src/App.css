@@ -1,3 +1,8 @@
+.loginGoogle-div{
+  mask-position: center;
+}
+
+
 .create {
     display: grid;
     justify-content: space-evenly;
@@ -20,3 +25,4 @@
   padding: 10px 0;
   font-size: 10px;
 }
+

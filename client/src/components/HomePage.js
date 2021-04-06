@@ -13,8 +13,14 @@ export class HomePage extends Component {
           bookreacts: [],
           userEmail: '',
         };
+       
     }
 
+    logOut = () => {
+      localStorage.clear();
+      window.location.href = '/';
+         } ;
+//getting useremail to set state of bookreacts
     fetchdata = async () => {
         try {
           const response = await axios.get(`/bookreacts/${this.state.userEmail}`);
@@ -26,8 +32,10 @@ export class HomePage extends Component {
         }
       };
     //to update state of component
+        
       componentDidMount = () => {
         this.fetchdata();
+       
       };
 
       componentDidMount = () => {
@@ -35,11 +43,14 @@ export class HomePage extends Component {
           this.setState({
               userEmail: userData.email
           })
+        
       };
+
     
       render() {
         return (
           <>
+          <button onClick={this.logOut}> Logout </button>
           <CreateForm fetchdata={this.fetchdata} email={this.state.userEmail} />
           {this.state.bookreacts.map((bookreact, index) => {
               return <Bookreact bookreact={bookreact} key={bookreact._id} fetchdata={this.fetchdata}  />;

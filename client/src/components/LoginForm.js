@@ -3,7 +3,7 @@ import LoginGoogle from './LoginGoogle'
 
 const LoginForm = () => {
     return (
-        <div>
+        <div className='login'>
             <LoginGoogle />
         </div>
     )

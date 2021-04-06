@@ -1,8 +1,6 @@
 import Axios from 'axios';
 
 const api = Axios.create({
-    // headers : {'Access-Control-Allow-Origin': 'https://dock-frontend.herokuapp.com' },
-    // baseURL: process.env.REACT_APP_MONGODB_URL
     baseURL: 'http://localhost:3000',
 });
 
