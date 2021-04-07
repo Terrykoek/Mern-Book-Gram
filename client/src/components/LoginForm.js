@@ -1,5 +1,6 @@
 import React from 'react'
 import LoginGoogle from './LoginGoogle'
+import '../App.css';
 
 const LoginForm = () => {
     return (

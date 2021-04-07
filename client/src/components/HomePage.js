@@ -1,7 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component,} from 'react';
 import Bookreact from './Bookreact';
 import CreateForm from './CreateForm';
-import UpdateForm from './UpdateForm';
+// import UpdateForm from './UpdateForm';
+import Axios from 'axios'
+
 
 const axios = require('axios');
 
@@ -12,14 +14,31 @@ export class HomePage extends Component {
         this.state = {
           bookreacts: [],
           userEmail: '',
+          imageSelected:'',
         };
        
     }
 
+
+//logout function to clear localstorage of data to logout
     logOut = () => {
       localStorage.clear();
       window.location.href = '/';
-         } ;
+         };
+
+
+
+  uploadImage = () => {
+    // console.log(files[0]);
+    const formData = new FormData()
+    formData.append("file", this.imageSelected);
+    formData.append("upload_preset", "kfx9w1n8")
+
+    Axios.post("https://api.cloudinary.com/v1_1/dznvifj49/image/upload", formData).then((response)=> {
+    console.log(response);
+  });
+  };
+
 //getting useremail to set state of bookreacts
     fetchdata = async () => {
         try {
@@ -31,6 +50,8 @@ export class HomePage extends Component {
           console.log(err);
         }
       };
+
+     
     //to update state of component
         
       componentDidMount = () => {
@@ -46,17 +67,25 @@ export class HomePage extends Component {
         
       };
 
+     
     
       render() {
         return (
           <>
-          <button onClick={this.logOut}> Logout </button>
+          <div className='home'>
+          <button className="logout" onClick={this.logOut}> Logout </button>
           <CreateForm fetchdata={this.fetchdata} email={this.state.userEmail} />
           {this.state.bookreacts.map((bookreact, index) => {
               return <Bookreact bookreact={bookreact} key={bookreact._id} fetchdata={this.fetchdata}  />;
           })}
+            <div>
+            <input type="file" onChange={(event) => {  this.setState({ imageSelected: event.target.files[0] }); }} />
+            <button onClick={this.uploadImage}> Upload Image 
+            </button>
+            </div>
+            </div>
           </>
-          );
+        );
       }
     }
 
