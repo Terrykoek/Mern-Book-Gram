@@ -4,7 +4,7 @@ const bookreactSchema = new mongoose.Schema({
   title: String,
   sypnopsis: String,
   url: String,
-  likeCount: Number,
+  likeCount: String,
   email: String
 });
 

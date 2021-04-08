@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import UploadImg from './Uploadimg';
 
 export default class CreateForm extends Component {
   constructor(props) {
@@ -61,19 +62,14 @@ export default class CreateForm extends Component {
           id='sypnopsis'
           placeholder='sypnopsis'
         />
-        <input
-          type='url'
-          value={this.state.url}
-          onChange={this.handleChange}
-          id='url'
-          placeholder='url'
-        />
+       
+      
         <input
           type='text'
           value={this.state.likeCount}
           onChange={this.handleChange}
           id='likeCount'
-          placeholder='likeCount'
+          placeholder='author'
         />
         <input type='submit' value='Add books' />
       </form>

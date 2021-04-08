@@ -4,6 +4,7 @@ import CreateForm from './CreateForm';
 // import UpdateForm from './UpdateForm';
 import Axios from 'axios'
 import {Image} from 'cloudinary-react'
+import UploadImg from './Uploadimg';
 
 
 const axios = require('axios');
@@ -41,7 +42,7 @@ export class HomePage extends Component {
     console.log(this.state.imageSelected);
     formData.append("api_key",'292816617687926');
     formData.append("file", this.state.imageSelected);
-    formData.append("public_id", "sample_image");
+    // formData.append("public_id", "sample_image");
     // formData.append("timestamp", timeStamp);
     formData.append("upload_preset", "kfx9w1n8");
     axios
@@ -94,13 +95,9 @@ export class HomePage extends Component {
           {this.state.bookreacts.map((bookreact, index) => {
               return <Bookreact bookreact={bookreact} key={bookreact._id} fetchdata={this.fetchdata}  />;
           })}
-            <div>
-            <input type="file" onChange={(event) => {  this.setState({ imageSelected: event.target.files[0] }); }} />
-            <button onClick={this.uploadImage}> Upload Image 
-            </button>
            
             </div>
-            </div>
+           
           </>
         );
       }

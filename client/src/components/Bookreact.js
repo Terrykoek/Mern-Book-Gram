@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import UpdateForm from './UpdateForm';
+import UploadImg from './Uploadimg';
 
 class Bookreact extends Component {  
   constructor(props) {
@@ -27,11 +28,11 @@ class Bookreact extends Component {
     return (
       <>
         <h4 class="results" onClick={() => window.open(this.props.bookreact.url)}>
-         <div> {this.props.bookreact.title} </div>
-         <div> {this.props.bookreact.sypnopsis}</div>
-         <div>  {this.props.bookreact.url}</div>
-         <div>  {this.props.bookreact.likeCount}</div>
+         <div> Title: {this.props.bookreact.title} </div>
+         <div> Sypnopsis: {this.props.bookreact.sypnopsis}</div>
+         <div>  Author: {this.props.bookreact.likeCount}</div>
         </h4>
+        <UploadImg/>
         <button 
           className='edit-btn'
           onClick={this.toggleEdit}
