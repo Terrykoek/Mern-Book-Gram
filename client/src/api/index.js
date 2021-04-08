@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const api = Axios.create({
-    baseURL: 'https://mernbookgram.herokuapp.com:3000',
+    baseURL: 'https://mernbookgram.herokuapp.com',
 });
 
 const googleLogin = async response => {
