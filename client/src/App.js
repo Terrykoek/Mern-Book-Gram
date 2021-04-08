@@ -91,9 +91,6 @@ export class App extends Component {
   render() {
     return (
       <>
-      <Router>
-        <Routes />
-      </Router>
 
       <CreateForm fetchdata={this.fetchdata} />
       {this.state.bookreacts.map((bookreact, index) => {

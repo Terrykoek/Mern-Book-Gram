@@ -29,8 +29,6 @@ class Bookreact extends Component {
   render() {
     return (
       <>
-        <Button type='submit' href='./login'color='primary' variant='contained'  fullWidth>Sign In</Button>
-
         <h4 class="results" onClick={() => window.open(this.props.bookreact.url)}>
          <div> {this.props.bookreact.title} </div>
          <div> {this.props.bookreact.sypnopsis}</div>
