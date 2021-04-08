@@ -31,6 +31,7 @@
 
  body, html {
   height: 100%;
+  color: white;
   }
   .login {
   background-image: url("https://miro.medium.com/max/2400/0*hDAyhnOx767w5qma.jpg");
@@ -42,7 +43,7 @@
 
 
   .home{
-  background-image: url("https://image.freepik.com/free-photo/old-vintage-books-isolated-white-background_106006-377.jpg");
+  background-image: url("https://makcreates.com/wp-content/uploads/2018/03/black-background-mak-creates-web-design-services-1500-2500.jpg");
   height: 100vh;
   background-position: center;
   background-repeat: no-repeat;
