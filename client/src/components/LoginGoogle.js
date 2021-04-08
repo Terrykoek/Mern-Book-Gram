@@ -24,7 +24,7 @@ class LoginGoogle extends Component {
                 <GoogleLogin
                     clientId="1044015139792-jjl22brbh17oo2a7jkgg720tcqqc6cgf.apps.googleusercontent.com"
                     render={renderProps => (
-                        <GoogleButton onClick={renderProps.onClick} disabled={renderProps.disabled}> </GoogleButton>
+                        <GoogleButton className='signInButton' onClick={renderProps.onClick} disabled={renderProps.disabled}> </GoogleButton>
                     )}
                     buttonText="Login"
                     onSuccess={this.responseSuccessGoogle}

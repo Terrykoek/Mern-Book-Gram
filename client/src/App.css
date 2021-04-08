@@ -1,6 +1,8 @@
-/*.loginGoogle-div{
-  mask-position: center;
-} */
+.signInButton {
+  display:block;
+  margin-top: -0.25rem; 
+  width:max-content;
+}
 
 
 .create {

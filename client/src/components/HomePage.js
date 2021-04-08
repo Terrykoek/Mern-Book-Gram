@@ -3,6 +3,7 @@ import Bookreact from './Bookreact';
 import CreateForm from './CreateForm';
 // import UpdateForm from './UpdateForm';
 import Axios from 'axios'
+import {Image} from 'cloudinary-react'
 
 
 const axios = require('axios');
@@ -27,16 +28,31 @@ export class HomePage extends Component {
          };
 
 
-
   uploadImage = () => {
     // console.log(files[0]);
-    const formData = new FormData()
-    formData.append("file", this.imageSelected);
-    formData.append("upload_preset", "kfx9w1n8")
+    // const formData = new FormData()
+    // formData.append("file", this.imageSelected);
+    // formData.append("upload_preset", "kfx9w1n8")
 
-    Axios.post("https://api.cloudinary.com/v1_1/dznvifj49/image/upload", formData).then((response)=> {
-    console.log(response);
-  });
+    // Axios.post("https://api.cloudinary.com/v1_1/dznvifj49/image/upload", formData).then((response)=> {
+    // console.log(formData);
+    // console.log(response);
+    let formData = new FormData();
+    console.log(this.state.imageSelected);
+    formData.append("api_key",'292816617687926');
+    formData.append("file", this.state.imageSelected);
+    formData.append("public_id", "sample_image");
+    // formData.append("timestamp", timeStamp);
+    formData.append("upload_preset", "kfx9w1n8");
+    axios
+    .post("https://api.cloudinary.com/v1_1/dznvifj49/image/upload", formData)
+    .then((result) => {
+        console.log(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    }) 
+
   };
 
 //getting useremail to set state of bookreacts
@@ -82,6 +98,7 @@ export class HomePage extends Component {
             <input type="file" onChange={(event) => {  this.setState({ imageSelected: event.target.files[0] }); }} />
             <button onClick={this.uploadImage}> Upload Image 
             </button>
+           
             </div>
             </div>
           </>
