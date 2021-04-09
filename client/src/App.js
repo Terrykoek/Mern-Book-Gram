@@ -5,7 +5,7 @@
 // // function App() {
 // //   const responseSuccessGoogle = (response) => {
 // //     console.log(response);
-    
+
 // //   };
 // //   const responseErrorGoogle = (response) => {
 // //     console.log(response);
@@ -20,7 +20,7 @@
 // //         onFailure={responseErrorGoogle}
 // //         cookiePolicy={"single_host_origin"}
 // //       />
-      
+
 // //     </div>
 // //   );
 // // }
@@ -48,22 +48,21 @@
 //   }
 // }
 
-
+//   "proxy": "http://localhost:5000"
 
 // export default App;
 
-
-import './App.css';
-import React, { Component } from 'react';
-import Loginpage from './components/Loginpage';
+import "./App.css";
+import React, { Component } from "react";
+import Loginpage from "./components/Loginpage";
 
 export class App extends Component {
   render() {
     return (
-       <div className='App'>
-         <Loginpage />
-       </div>
-      )
+      <div className="App">
+        <Loginpage />
+      </div>
+    );
   }
 }
 
