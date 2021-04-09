@@ -1,13 +1,13 @@
-import React from 'react';
-import { GoogleLogout } from 'react-google-login';
+import React from "react";
+import { GoogleLogout } from "react-google-login";
 
-const clientId = "697400510228-eacr051p1dkqcdp5j8clv60bi365kih3.apps.googleusercontent.com" ;
-
+const clientId =
+  "697400510228-eacr051p1dkqcdp5j8clv60bi365kih3.apps.googleusercontent.com";
 
 function Googlelogout() {
   const onSuccess = () => {
-    console.log('Logout successfully');
-    alert('Logout successfully ✌');
+    console.log("Logout successfully");
+    alert("Logout successfully ✌");
   };
 
   return (

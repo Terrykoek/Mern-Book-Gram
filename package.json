@@ -20,10 +20,15 @@
   },
   "homepage": "https://github.com/Terrykoek/Mern-Book-Gram#readme",
   "dependencies": {
+    "cloudinary-react": "^1.7.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "google-auth-library": "^7.0.4",
+    "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.3",
     "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-google-login": "^5.2.2"
   }
 }

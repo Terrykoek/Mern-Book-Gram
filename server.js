@@ -11,6 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 //Controlers
 const bookreactsController = require("./controllers/bookreacts");
+const loginController = require("./controllers/loginController");
 
 // ... other imports
 const path = require("path");
@@ -27,7 +28,8 @@ db.on("error", (err) => console.log(err.message + " is Mongod not running?"));
 db.on("disconnected", () => console.log("mongo disconnected"));
 
 //Middleware
-app.use(express.static(path.join(__dirname, "client", "build")));
+// app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(express.static(path.join(__dirname, "build")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json()); //return middleware that parses only JSON
 
@@ -35,11 +37,16 @@ app.use(express.json()); //return middleware that parses only JSON
 // app.get('/', (req, res) =>{
 //     res.send('Hi, the route is working fne.')
 // });
-app.use("/bookreacts", bookreactsController);
+app.use("/bookreacts", bookreactsController, loginController);
 
 //catch any route that doenst exist
-app.get("*", (req, res) => {
-  res.status(404).json("Sorry, page does not exist");
+// app.get("*", (req, res) => {
+//   res.status(404).json("Sorry, page does not exist");
+// });
+
+//react app is based on this route
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
 app.listen(PORT, () => {

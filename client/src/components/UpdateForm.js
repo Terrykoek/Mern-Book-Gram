@@ -57,13 +57,7 @@ export default class UpdateForm extends Component {
           id='sypnopsis'
           placeholder='sypnopsis'
         />
-        <input
-          type='url'
-          value={this.state.url}
-          onChange={this.handleChange}
-          id='url'
-          placeholder='url'
-        />
+      
         <input
           type='text'
           value={this.state.likeCount}
