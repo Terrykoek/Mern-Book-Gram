@@ -42,7 +42,8 @@ A working full-stack application, built by our group members, using the MERN sta
 
 * **Cloudinary** is a cloud service that offers a solution to a web application's entire image management pipeline.
 
-* **Mongoose** provides a straight-forward, schema-based solution to model the application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
+* **MongoDB** is a document-oriented NoSQL database used for high volume data storage
+
 
 ### Backend & Frontend
 * **Express**
@@ -53,7 +54,7 @@ A working full-stack application, built by our group members, using the MERN sta
 
 * **Axios** is a promise based HTTP client for the browser and node.js
 
-* **mdbreact** is an UI KIT for building responsive, mobile-first websites and apps - free for personal & commercial use.
+* **Mongoose** provides a straight-forward, schema-based solution to model the application data. It includes built-in type casting, validation, query building, business logic hooks and more, out of the box.
 
 * **React-google-login** is a Google oAUth Sign-in / Log-in Component for React
 
