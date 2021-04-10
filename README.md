@@ -72,8 +72,10 @@ set up database with collections and schema validation in the MongoDB.
 ## Accomplishments
 
 * The application is meeting the mininum viable product (MVP)'s requirements.
-
+* User is able to log in with their google account.
+* User is able to input data about their favourite books 
 * User can choose to upload a picture with there add book post from local after login.
+* User is able to edit or delete their book data info.
 
 ## Additional Features were under Considerations
 
